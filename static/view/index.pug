@@ -1,0 +1,23 @@
+doctype html
+html(lang='en')
+  head
+    include includes/meta.pug
+    title Vue Webpack Starter
+    base(href="./")
+
+    //- icon
+    link(rel="shortcut icon", href=require('../favicon.ico'))
+
+    //- webpack style
+    each _style,index in htmlWebpackPlugin.files.css
+      link(href=_style, rel="stylesheet")
+
+  body
+    #app
+
+    //- styles and scripts
+    span(style="display:none;")
+      //- webpack loading js
+      each _js,index in htmlWebpackPlugin.files.js
+        script(src=_js)
+
