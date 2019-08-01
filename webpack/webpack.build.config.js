@@ -51,7 +51,7 @@ const imageWebpackLoaderConfig = {
 };
 
 const cssRulesUse_build = (isModule = true) => ExtractTextPlugin.extract({
-  fallback: 'vue-style-loader',
+  fallback: 'style-loader',
   publicPath: '../',  // fix images url bug
   use: [
     isModule ? styleLoadersConfig.cssLoaderWithModule : styleLoadersConfig.cssLoader,
@@ -60,7 +60,7 @@ const cssRulesUse_build = (isModule = true) => ExtractTextPlugin.extract({
 });
 
 const scssRulesUse_build = (isModule = true) => ExtractTextPlugin.extract({
-  fallback: 'vue-style-loader',
+  fallback: 'style-loader',
   publicPath: '../',  // fix images url bug
   use: [
     isModule ? styleLoadersConfig.cssLoaderWithModule : styleLoadersConfig.cssLoader,
@@ -204,8 +204,8 @@ module.exports = webpackMerge(webpackBase, {
 
   plugins: [
     new HtmlWebpackPlugin({
-      inject: false,
-      template: path.resolve('./static', 'view', 'index.pug'),
+      inject: true,
+      template: path.resolve('./static', 'view', 'index.html'),
       minify: {
         removeComments: true,
         collapseWhitespace: true,

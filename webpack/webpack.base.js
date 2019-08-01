@@ -60,19 +60,6 @@ module.exports = {
         loader: 'vue-loader',
       },
 
-      // Pug template
-      {
-        test: /\.pug$/,
-        include: [
-          path.resolve('app'),
-          path.resolve('static'),
-        ],
-        exclude: [
-          path.resolve('node_modules'),
-        ],
-        loader: 'pug-loader',
-      },
-
       // ico
       {
         test: /\.ico$/i,

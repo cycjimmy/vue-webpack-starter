@@ -114,8 +114,8 @@ module.exports = webpackMerge(webpackBase, {
 
   plugins: [
     new HtmlWebpackPlugin({
-      inject: false,
-      template: path.resolve('static', 'view', 'index.pug'),
+      inject: true,
+      template: path.resolve('./static', 'view', 'index.html'),
     }),
 
     new BrowserSyncPlugin(browserSyncConfig({
