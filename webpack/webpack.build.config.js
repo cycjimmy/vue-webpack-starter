@@ -28,7 +28,7 @@ const imageWebpackLoaderConfig = {
       optimizationLevel: 6,
     },
     pngquant: {
-      quality: '65-90',
+      quality: [.65, .9],
       speed: 4,
     },
     svgo: {

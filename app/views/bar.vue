@@ -1,3 +1,13 @@
 <template>
-  <p>Bar route</p>
+  <p>{{ msg }}</p>
 </template>
+
+
+<script>
+  export default {
+    data: () => ({
+      msg: 'Bar route'
+    })
+  }
+</script>
+

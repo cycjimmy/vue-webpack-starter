@@ -29,7 +29,9 @@ module.exports = options => {
     sassLoader: {
       loader: 'sass-loader',
       options: {
-        outputStyle: 'expanded',
+        sassOptions: {
+          outputStyle: 'expanded',
+        },
       },
     },
   }, options);

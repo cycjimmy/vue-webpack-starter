@@ -63,12 +63,6 @@ module.exports = {
       // ico
       {
         test: /\.ico$/i,
-        exclude: [
-          path.resolve('node_modules'),
-        ],
-        include: [
-          path.resolve('static'),
-        ],
         use: [
           {
             loader: 'file-loader',
@@ -112,7 +106,6 @@ module.exports = {
     new VueLoaderPlugin(),
 
     new CleanWebpackPlugin({
-      dangerouslyAllowCleanPatternsOutsideProject: true,
       verbose: true,
       dry: false
     }),

@@ -5,7 +5,7 @@
       :src="logoSrc"
       :class="$style.logo"
     >
-    <HelloWorld msg="Welcome to Vue.js App"/>
+    <HelloWorld v-bind:msg="msg"/>
 
     <nav :class="$style.nav">
       <h2>Navigation menu</h2>
@@ -33,6 +33,7 @@
     data() {
       return {
         logoSrc: require('../static/images/logo.png'),
+        msg: "Welcome to Vue.js App",
       };
     },
     components: {
