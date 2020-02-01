@@ -1,6 +1,6 @@
 {
   "name": "vue-webpack-starter",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "vue webpack starter",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack --config webpack/webpack.dev.config.js --display-modules --display-reasons --display-error-details --watch --color",
