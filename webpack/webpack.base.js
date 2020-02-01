@@ -1,6 +1,5 @@
 const
   path = require('path')
-  , webpack = require('webpack')
 
   // Webpack Plugin
   , DefinePlugin = require('webpack/lib/DefinePlugin')
@@ -18,9 +17,7 @@ const
 
 module.exports = {
   entry: {
-    'main': [
-      path.resolve('app', 'main.js'),
-    ],
+    'load': path.resolve('app', 'load.js'),
   },
 
   output: {
@@ -82,8 +79,8 @@ module.exports = {
       cacheGroups: {
         default: false,
         vendors: false,
-        main: {
-          name: 'main',
+        load: {
+          name: 'load',
           chunks: 'initial',
           minSize: Infinity,
           minChunks: Infinity,
@@ -91,7 +88,7 @@ module.exports = {
       }
     },
     runtimeChunk: {
-      name: 'main'
+      name: 'load'
     }
   },
 

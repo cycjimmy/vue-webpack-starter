@@ -32,7 +32,7 @@
     name: 'app',
     data() {
       return {
-        logoSrc: require('../static/images/logo.png'),
+        logoSrc: require('../static/images/logo.png').default,
         msg: "Welcome to Vue.js App",
       };
     },

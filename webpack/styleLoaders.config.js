@@ -13,6 +13,7 @@ module.exports = options => {
     cssLoaderWithModule: {
       loader: 'css-loader',
       options: {
+        importLoaders: 2,
         modules: {
           localIdentName: cssIdentifier,
         },

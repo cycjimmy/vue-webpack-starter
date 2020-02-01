@@ -1,15 +1,12 @@
 # Vue Webpack Starter
 
+![][workflows-badge-image]
 [![build status][travis-image]][travis-url]
-[![David deps][david-image]][david-url]
-[![devDependencies Status][david-dev-image]][david-dev-url]
+[![libraries dependency status][libraries-status-image]][libraries-status-url]
+[![Release date][release-date-image]][release-url]
+[![semantic-release][semantic-image]][semantic-url]
 
-[travis-image]: https://travis-ci.org/cycjimmy/vue-webpack-starter.svg?branch=master
-[travis-url]: https://travis-ci.org/cycjimmy/vue-webpack-starter
-[david-image]: https://img.shields.io/david/cycjimmy/vue-webpack-starter.svg?style=flat-square
-[david-url]: https://david-dm.org/cycjimmy/vue-webpack-starter
-[david-dev-image]: https://david-dm.org/cycjimmy/vue-webpack-starter/dev-status.svg?style=flat-square
-[david-dev-url]: https://david-dm.org/cycjimmy/vue-webpack-starter?type=dev
+* A webpack starter for vue building. [Demo][github-pages-url]
 
 ## Features
 * CSS Module
@@ -30,21 +27,18 @@ vue-webpack-starter
  │
  ├─app/                        # Project entry folder
  │   └─...
- ├─gulp/                       # Gulp tasks folder
- │   └─...
  ├─mock/                       # Mock data entry folder
  │   ├─api/
  │   └─webSocket/
  ├─static/                     # Static folder
  │   ├─images/                 # Pictures folder
- │   ├─view/                   # Static pug template folder
+ │   ├─view/                   # Static html template folder
  │   │   └──...
  │   └─favicon.ico             # Icon file
  ├─webpack/                    # Webpack configuration folder
  │   ├─browserSync.config.js   # BrowserSync config file
  │   ├─postcss.config.js       # Postcss config file
  │   └─...                     # Webpack configuration files
- ├─gulpfile.js                 # Gulp file entry
  └─...
 ```
 
@@ -62,3 +56,14 @@ $ npm run build:watch
 $ npm run deploy
 ```
 
+<!-- Links: -->
+[workflows-badge-image]: https://github.com/cycjimmy/vue-webpack-starter/workflows/Test%20CI/badge.svg
+[travis-image]: https://img.shields.io/travis/cycjimmy/vue-webpack-starter
+[travis-url]: https://travis-ci.org/cycjimmy/vue-webpack-starter
+[libraries-status-image]: https://img.shields.io/librariesio/release/github/cycjimmy/vue-webpack-starter
+[libraries-status-url]: https://libraries.io/github/cycjimmy/vue-webpack-starter
+[release-date-image]: https://img.shields.io/github/release-date/cycjimmy/vue-webpack-starter
+[release-url]: https://github.com/cycjimmy/vue-webpack-starter/releases
+[semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+[semantic-url]: https://github.com/semantic-release/semantic-release
+[github-pages-url]: https://cycjimmy.github.io/vue-webpack-starter/
