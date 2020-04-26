@@ -51,9 +51,6 @@ $ npm start
 $ npm run build
 # or
 $ npm run build:watch
-
-# deploy to gh-pages
-$ npm run deploy
 ```
 
 <!-- Links: -->
