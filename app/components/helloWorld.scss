@@ -1,0 +1,8 @@
+// styleInHtml
+@import "../theme/variables";
+@import "../theme/utilities";
+
+.hello {
+  margin: 10px;
+  font-size: $fontS;
+}
