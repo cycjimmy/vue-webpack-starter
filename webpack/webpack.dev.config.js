@@ -1,31 +1,13 @@
-﻿const
-  path = require('path')
-  , webpackMerge = require('webpack-merge')
-  , webpackBase = require("./webpack.base.js")
-  , browserSyncConfig = require('./browserSync.config')
-  , styleLoadersConfig = require('./styleLoaders.config')()
+/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
+const path = require('path');
+const { merge } = require('webpack-merge');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpackBase = require('./webpack.base');
+const browserSyncConfig = require('./browserSync.config');
+const styleLoadersConfig = require('./styleLoaders.config')();
 
-  // Webpack Plugin
-  , BrowserSyncPlugin = require('browser-sync-webpack-plugin')
-  , HtmlWebpackPlugin = require('html-webpack-plugin')
-;
-
-const arrayCssRulesUse_dev = (isModule = true) => [
-  {
-    loader: 'vue-style-loader',
-  },
-  isModule ? styleLoadersConfig.cssLoaderWithModule : styleLoadersConfig.cssLoader,
-];
-
-const arrayScssRulesUse_dev = (isModule = true) => [
-  {
-    loader: 'vue-style-loader'
-  },
-  isModule ? styleLoadersConfig.cssLoaderWithModule : styleLoadersConfig.cssLoader,
-  styleLoadersConfig.sassLoader,
-];
-
-module.exports = webpackMerge(webpackBase, {
+module.exports = merge(webpackBase, {
   mode: 'development',
   devtool: 'eval-source-map',
 
@@ -40,27 +22,46 @@ module.exports = webpackMerge(webpackBase, {
         test: /\.css$/,
         oneOf: [{
           resourceQuery: /module/,
-          use: arrayCssRulesUse_dev(true),
+          use: [
+            {
+              loader: 'vue-style-loader',
+            },
+            styleLoadersConfig.cssLoader,
+          ],
         }, {
-          use: arrayCssRulesUse_dev(false),
+          use: [
+            {
+              loader: 'vue-style-loader',
+            },
+            styleLoadersConfig.cssLoader,
+          ],
         }],
       },
       {
         test: /\.scss$/,
         oneOf: [{
           resourceQuery: /module/,
-          use: arrayScssRulesUse_dev(true),
+          use: [
+            {
+              loader: 'vue-style-loader',
+            },
+            styleLoadersConfig.cssLoader,
+            styleLoadersConfig.sassLoader,
+          ],
         }, {
-          use: arrayScssRulesUse_dev(false),
+          use: [
+            {
+              loader: 'vue-style-loader',
+            },
+            styleLoadersConfig.cssLoader,
+            styleLoadersConfig.sassLoader,
+          ],
         }],
       },
 
       // Pictures
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        exclude: [
-          path.resolve('node_modules'),
-        ],
         include: [
           path.resolve('app'),
           path.resolve('static'),
@@ -75,12 +76,9 @@ module.exports = webpackMerge(webpackBase, {
         ],
       },
 
-      // media
+      // Media
       {
         test: /\.(wav|mp3|mpeg|mp4|webm|ogv|flv|ts)$/i,
-        exclude: [
-          path.resolve('node_modules'),
-        ],
         include: [
           path.resolve('static', 'media'),
         ],
@@ -97,19 +95,16 @@ module.exports = webpackMerge(webpackBase, {
       // Font
       {
         test: /\.(eot|ttf|woff|woff2)$/,
-        exclude: [
-          path.resolve('node_modules'),
-        ],
         use: [
           {
             loader: 'file-loader',
             options: {
               name: 'fonts/[name].[ext]',
             },
-          }
+          },
         ],
       },
-    ]
+    ],
   },
 
   plugins: [
@@ -125,6 +120,5 @@ module.exports = webpackMerge(webpackBase, {
     }), {
       reload: true,
     }),
-
   ],
 });
