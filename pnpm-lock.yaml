@@ -21,7 +21,6 @@ specifiers:
   eslint-config-airbnb-base: ^15.0.0
   eslint-plugin-import: ^2.25.3
   eslint-webpack-plugin: ^3.1.1
-  expose-loader: ^3.1.0
   file-loader: ^6.2.0
   html-webpack-plugin: ^5.5.0
   image-webpack-loader: ^8.1.0
@@ -71,7 +70,6 @@ devDependencies:
   eslint-config-airbnb-base: 15.0.0_fe22d862ffeecaee86c93a006d59e41e
   eslint-plugin-import: 2.25.4_eslint@8.11.0
   eslint-webpack-plugin: 3.1.1_eslint@8.11.0+webpack@5.70.0
-  expose-loader: 3.1.0_webpack@5.70.0
   file-loader: 6.2.0_webpack@5.70.0
   html-webpack-plugin: 5.5.0_webpack@5.70.0
   image-webpack-loader: 8.1.0
@@ -3643,15 +3641,6 @@ packages:
       pify: 2.3.0
     dev: true
     optional: true
-
-  /expose-loader/3.1.0_webpack@5.70.0:
-    resolution: {integrity: sha512-2RExSo0yJiqP+xiUue13jQa2IHE8kLDzTI7b6kn+vUlBVvlzNSiLDzo4e5Pp5J039usvTUnxZ8sUOhv0Kg15NA==}
-    engines: {node: '>= 12.13.0'}
-    peerDependencies:
-      webpack: ^5.0.0
-    dependencies:
-      webpack: 5.70.0_webpack-cli@4.9.2
-    dev: true
 
   /ext-list/2.2.2:
     resolution: {integrity: sha512-u+SQgsubraE6zItfVA0tBuCBhfU9ogSRnsvygI7wht9TS510oLkBRXBsqopeUG/GBOIQyKZO9wjTqIu/sf5zFA==}
