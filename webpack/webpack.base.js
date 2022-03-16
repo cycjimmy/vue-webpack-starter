@@ -1,27 +1,21 @@
-const
-  path = require('path')
+/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
+const path = require('path');
+const DefinePlugin = require('webpack/lib/DefinePlugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// vue
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
-  // Webpack Plugin
-  , DefinePlugin = require('webpack/lib/DefinePlugin')
-  , {CleanWebpackPlugin} = require('clean-webpack-plugin')
-
-  // vue
-  , VueLoaderPlugin = require('vue-loader/lib/plugin')
-;
-
-const
-  DEVELOPMENT = process.env.NODE_ENV === 'development'    // 开发模式
-  , PRODUCTION = process.env.NODE_ENV === 'production'    // 生产模式
-  , PRODUCTION_TEST_SERVER = process.env.NODE_ENV === 'production_test_server'    // 用测试服务器预览生产模式
-;
+const DEVELOPMENT = process.env.NODE_ENV === 'development'; // Development mode
+const PRODUCTION = process.env.NODE_ENV === 'production'; // Production mode
+const PRODUCTION_TEST_SERVER = process.env.NODE_ENV === 'production_test_server'; // Preview production mode with test server
 
 module.exports = {
   entry: {
-    'load': path.resolve('app', 'load.js'),
+    load: path.resolve('app', 'load.js'),
   },
 
   output: {
-    // path: 'dist',
     filename: DEVELOPMENT
       ? 'scripts/[name].bundle.[chunkhash:4].js'
       : 'scripts/[name].bundle.[chunkhash:8].min.js',
@@ -37,10 +31,10 @@ module.exports = {
       path.resolve('node_modules'),
       path.resolve('static'),
     ],
-    'alias': {
-      'vue$': path.resolve('node_modules', 'vue', 'dist', 'vue.esm.js'),
+    alias: {
+      vue$: path.resolve('node_modules', 'vue', 'dist', 'vue.esm.js'),
     },
-    'extensions': ['.js']
+    extensions: ['.js'],
   },
 
   module: {
@@ -69,27 +63,27 @@ module.exports = {
           },
         ],
       },
-    ]
+    ],
   },
 
   optimization: {
+    moduleIds: 'deterministic',
     splitChunks: {
       chunks: 'initial',
-      name: true,
       cacheGroups: {
         default: false,
-        vendors: false,
-        load: {
-          name: 'load',
+        defaultVendors: false,
+        runtime: {
+          name: 'runtime',
           chunks: 'initial',
           minSize: Infinity,
           minChunks: Infinity,
         },
-      }
+      },
     },
     runtimeChunk: {
-      name: 'load'
-    }
+      name: 'runtime',
+    },
   },
 
   plugins: [
@@ -102,9 +96,13 @@ module.exports = {
 
     new VueLoaderPlugin(),
 
+    new ESLintPlugin({
+      fix: true,
+    }),
+
     new CleanWebpackPlugin({
       verbose: true,
-      dry: false
+      cleanStaleWebpackAssets: false,
     }),
   ],
 };

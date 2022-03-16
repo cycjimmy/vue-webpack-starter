@@ -1,10 +1,9 @@
-const
-  ajaxMake = require('./ajax.make')
-  , data = require('./data.json')
-;
+/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
+const makeAjax = require('@cycjimmy/config-lib/cjs/browsersync/2.x/middleware/makeAjax').default;
+const data = require('./data.json');
 
-module.exports = ajaxMake({
+module.exports = makeAjax({
   apiName: 'getData',
-  data: data,
+  data,
   timeout: 500,
 });

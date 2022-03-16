@@ -1,17 +1,13 @@
-const getDataAjax = require('../mock/api/getData.ajax.js');
+const getDataAjax = require('../mock/api/getData.ajax');
 
-module.exports = options => {
-  return Object.assign({
-    server: {
-      // https: true,
+module.exports = (options) => ({
+  server: {},
+  ghostMode: false,
+  middleware: [
+    {
+      route: '/getData',
+      handle: getDataAjax(),
     },
-    ghostMode: false,
-    // logLevel: 'debug',
-    middleware: [
-      {
-        route: '/getData',
-        handle: getDataAjax(),
-      },
-    ],
-  }, options);
-};
+  ],
+  ...options,
+});

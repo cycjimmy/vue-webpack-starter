@@ -5,6 +5,7 @@ on:
   pull_request:
     branches:
       - master
+      - main
 
   schedule:
     - cron: 0 2 * * 0
@@ -14,14 +15,17 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: [10.x, 12.x]
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        node: [ '16' ]
+        os: [ ubuntu-latest, windows-latest, macOS-latest ]
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm ci
+          node-version: ${{ matrix.node }}
+      - uses: pnpm/action-setup@v2.2.1
+        with:
+          version: 6
+      - run: pnpm install
+      - run: npm run lint:fix
       - run: npm run build
-

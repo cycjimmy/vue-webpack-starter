@@ -1,79 +1,18 @@
-const
-  path = require('path')
-  , webpack = require('webpack')
-  , webpackMerge = require('webpack-merge')
-  , webpackBase = require('./webpack.base.js')
-  , browserSyncConfig = require('./browserSync.config')
-  , styleLoadersConfig = require('./styleLoaders.config')()
+/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
+const path = require('path');
+const { merge } = require('webpack-merge');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const terserConfig = require('@cycjimmy/config-lib/cjs/terserWebpackPlugin/2.x/working').default;
+const imageWebpackLoaderConfig = require('@cycjimmy/config-lib/cjs/imageWebpackLoader/8.x/production').default;
+const styleLoadersConfig = require('./styleLoaders.config')();
+const browserSyncConfig = require('./browserSync.config');
+const webpackBase = require('./webpack.base');
 
-  // Webpack Plugin
-  , BrowserSyncPlugin = require('browser-sync-webpack-plugin')
-  , HtmlWebpackPlugin = require('html-webpack-plugin')
-  , TerserPlugin = require('terser-webpack-plugin')
-  , ExtractTextPlugin = require('extract-text-webpack-plugin')
-  , OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-
-  // configs
-  , terserConfig = require('@cycjimmy/config-lib/terserWebpackPlugin/2.x/production')
-
-;
-
-const imageWebpackLoaderConfig = {
-  loader: 'image-webpack-loader',
-  options: {
-    mozjpeg: {
-      progressive: true,
-      quality: 70,
-    },
-    gifsicle: {
-      interlaced: false,
-    },
-    optipng: {
-      optimizationLevel: 6,
-    },
-    pngquant: {
-      quality: [.65, .9],
-      speed: 4,
-    },
-    svgo: {
-      plugins: [
-        {
-          removeViewBox: false,
-        },
-        {
-          removeEmptyAttrs: false,
-        },
-        {
-          moveGroupAttrsToElems: false,
-        },
-      ],
-    },
-    // webp: {
-    //   quality: 75
-    // },
-  }
-};
-
-const cssRulesUse_build = (isModule = true) => ExtractTextPlugin.extract({
-  fallback: 'style-loader',
-  publicPath: '../',  // fix images url bug
-  use: [
-    isModule ? styleLoadersConfig.cssLoaderWithModule : styleLoadersConfig.cssLoader,
-    styleLoadersConfig.postLoader,
-  ],
-});
-
-const scssRulesUse_build = (isModule = true) => ExtractTextPlugin.extract({
-  fallback: 'style-loader',
-  publicPath: '../',  // fix images url bug
-  use: [
-    isModule ? styleLoadersConfig.cssLoaderWithModule : styleLoadersConfig.cssLoader,
-    styleLoadersConfig.postLoader,
-    styleLoadersConfig.sassLoader,
-  ],
-});
-
-module.exports = webpackMerge(webpackBase, {
+module.exports = merge(webpackBase, {
   mode: 'production',
   bail: true,
 
@@ -85,29 +24,28 @@ module.exports = webpackMerge(webpackBase, {
     rules: [
       // Style
       {
-        test: /\.css$/,
-        oneOf: [{
-          resourceQuery: /module/,
-          use: cssRulesUse_build(true),
-        }, {
-          use: cssRulesUse_build(false),
-        }],
+        test: /\.scss$/,
+        use: [
+          styleLoadersConfig.miniCssExtractLoader,
+          styleLoadersConfig.cssLoader,
+          styleLoadersConfig.postLoader,
+          styleLoadersConfig.sassLoader,
+        ],
       },
       {
-        test: /\.scss$/,
-        oneOf: [{
-          resourceQuery: /module/,
-          use: scssRulesUse_build(true),
-        }, {
-          use: scssRulesUse_build(false),
-        }],
+        test: /\.css$/,
+        use: [
+          styleLoadersConfig.miniCssExtractLoader,
+          {
+            loader: 'css-loader',
+          },
+        ],
       },
 
       // Pictures
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         exclude: [
-          path.resolve('node_modules'),
           path.resolve('static', 'images', 'icons'),
           path.resolve('static', 'images', 'logos'),
           path.resolve('static', 'images', 'noUrl'),
@@ -123,16 +61,13 @@ module.exports = webpackMerge(webpackBase, {
               limit: 4096,
               name: 'images/[hash:12].[ext]',
               // name: 'images/[name].[ext]',
-            }
+            },
           },
           imageWebpackLoaderConfig,
         ],
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        exclude: [
-          path.resolve('node_modules'),
-        ],
         include: [
           path.resolve('static', 'images', 'noUrl'),
         ],
@@ -142,18 +77,15 @@ module.exports = webpackMerge(webpackBase, {
             options: {
               name: 'images/[hash:12].[ext]',
               // name: 'images/[name].[ext]',
-            }
+            },
           },
           imageWebpackLoaderConfig,
         ],
       },
 
-      // media
+      // Media
       {
         test: /\.(wav|mp3|mpeg|mp4|webm|ogv|flv|ts)$/i,
-        exclude: [
-          path.resolve('node_modules'),
-        ],
         include: [
           path.resolve('static', 'media'),
         ],
@@ -163,7 +95,7 @@ module.exports = webpackMerge(webpackBase, {
             options: {
               limit: 4096,
               name: 'media/[hash:12].[ext]',
-            }
+            },
           },
         ],
       },
@@ -171,39 +103,33 @@ module.exports = webpackMerge(webpackBase, {
       // Svg icons
       {
         test: /\.svg$/,
-        exclude: [
-          path.resolve('node_modules'),
-        ],
         include: [
-          path.resolve('static', 'images', 'icons')
+          path.resolve('static', 'images', 'icons'),
         ],
         use: [
           {
             loader: 'file-loader',
             options: {
               name: 'images/icons/[hash:12].[ext]',
-            }
-          }
+            },
+          },
         ],
       },
 
       // Font
       {
         test: /\.(eot|ttf|woff|woff2)$/,
-        exclude: [
-          path.resolve('node_modules'),
-        ],
         use: [
           {
             loader: 'url-loader',
             options: {
               limit: 8192,
               name: 'fonts/[hash:12].[ext]',
-            }
-          }
+            },
+          },
         ],
       },
-    ]
+    ],
   },
 
   plugins: [
@@ -224,27 +150,14 @@ module.exports = webpackMerge(webpackBase, {
       },
     }),
 
-    new webpack.HashedModuleIdsPlugin(),
-
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: 'style/[name].[chunkhash:8].min.css',
       ignoreOrder: false,
-      allChunks: false,
     }),
-
-    new OptimizeCssAssetsPlugin({
-      assetNameRegExp: /\.min\.css$/g,
-      cssProcessor: require('cssnano'),
-      cssProcessorOptions: {discardComments: {removeAll: true}},
-      canPrint: true
-    }),
-
-    new webpack.optimize.ModuleConcatenationPlugin(),
 
     new BrowserSyncPlugin(browserSyncConfig({
       server: {
         baseDir: 'build',
-        // https: true,
       },
       port: 4000,
       ui: {
@@ -258,6 +171,9 @@ module.exports = webpackMerge(webpackBase, {
 
   optimization: {
     minimize: true,
-    minimizer: [new TerserPlugin(terserConfig)],
+    minimizer: [
+      (compiler) => new TerserPlugin(terserConfig).apply(compiler),
+      new CssMinimizerPlugin(),
+    ],
   },
 });
