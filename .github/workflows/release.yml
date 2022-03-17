@@ -25,7 +25,7 @@ jobs:
           version: 6
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm ci
 
       - name: Test
         run: npm run lint:fix && npm run build
@@ -43,16 +43,11 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2.2.1
-        with:
-          version: 6
-
       - name: Install dependencies
-        run: pnpm install
+        run: npm ci
 
       - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v2
+        uses: cycjimmy/semantic-release-action@v3
         id: semantic
         with:
           branches: |

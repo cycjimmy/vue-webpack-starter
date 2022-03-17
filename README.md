@@ -3,6 +3,7 @@
 ![][workflows-badge-image]
 [![libraries dependency status][libraries-status-image]][libraries-status-url]
 [![Release date][release-date-image]][release-url]
+[![vue][vue-image]][vue-url]
 [![webpack][webpack-image]][webpack-url]
 [![semantic-release][semantic-image]][semantic-url]
 
@@ -30,8 +31,7 @@ vue-webpack-starter
  ├─app/                        # Project entry folder
  │   └─...
  ├─mock/                       # Mock data entry folder
- │   ├─api/
- │   └─webSocket/
+ │   └─api/
  ├─static/                     # Static folder
  │   ├─images/                 # Pictures folder
  │   ├─view/                   # Static html template folder
@@ -64,10 +64,13 @@ $ npm run build:watch
 [release-date-image]: https://img.shields.io/github/release-date/cycjimmy/vue-webpack-starter
 [release-url]: https://github.com/cycjimmy/vue-webpack-starter/releases
 
+[vue-image]: https://img.shields.io/github/package-json/dependency-version/cycjimmy/vue-webpack-starter/vue
+[vue-url]: https://github.com/vuejs/vue
+
 [webpack-image]: https://img.shields.io/github/package-json/dependency-version/cycjimmy/vue-webpack-starter/dev/webpack
 [webpack-url]: https://github.com/webpack/webpack
 
 [semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-url]: https://github.com/semantic-release/semantic-release
 
-[github-pages-url]: https://cycjimmy.github.io/static-webpack-starter/
+[github-pages-url]: https://cycjimmy.github.io/vue-webpack-starter/

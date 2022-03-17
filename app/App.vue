@@ -27,12 +27,13 @@
 
 <script>
   import HelloWorld from './components/HelloWorld.vue';
+  import imgLogo from '../static/images/logo.png';
 
   export default {
     name: 'app',
     data() {
       return {
-        logoSrc: require('../static/images/logo.png').default,
+        logoSrc: imgLogo,
         msg: "Welcome to Vue.js App",
       };
     },
