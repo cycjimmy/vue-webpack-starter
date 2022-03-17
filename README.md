@@ -17,8 +17,6 @@
 
 ## Installation
 ```shell
-$ pnpm install
-# or
 $ npm install
 # or
 $ yarn install
