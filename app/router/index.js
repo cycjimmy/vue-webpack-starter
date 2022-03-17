@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import Foo from '../views/Foo.vue';
 
@@ -20,13 +20,14 @@ const routes = [
     component: () => import('../views/Bar.vue'),
   },
   {
-    path: '/:catchAll(.*)',
+    path: '/:pathMatch(.*)*',
+    name: 'not-found',
     redirect: '/',
   },
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
   linkExactActiveClass: 'main_nav_active',
 });
