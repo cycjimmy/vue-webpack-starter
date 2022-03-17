@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/cycjimmy/vue-webpack-starter#readme",
   "dependencies": {
-    "@cycjimmy/awesome-js-funcs": "^3.1.0",
+    "@cycjimmy/awesome-js-funcs": "^4.0.1",
     "@cycjimmy/mini-xhr": "^4.1.0",
     "@cycjimmy/sass-lib": "^1.1.0",
     "vue": "^3.2.31",
