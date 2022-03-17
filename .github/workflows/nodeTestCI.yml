@@ -23,9 +23,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
-      - uses: pnpm/action-setup@v2.2.1
-        with:
-          version: 6
-      - run: pnpm install
+      - run: npm ci
       - run: npm run lint:fix
       - run: npm run build
