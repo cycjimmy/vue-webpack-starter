@@ -1,34 +1,33 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import Home from '../views/home.vue';
-import Foo from '../views/foo.vue';
-import Bar from '../views/bar.vue';
-
-// You don't need to do this when using global script tags.
-Vue.use(VueRouter);
+import { createRouter, createWebHashHistory } from 'vue-router';
+import Home from '../views/Home.vue';
+import Foo from '../views/Foo.vue';
 
 const routes = [
   {
     path: '/',
-    component: Home,
     name: 'home',
+    component: Home,
   },
   {
     path: '/foo',
-    component: Foo,
     name: 'foo',
+    component: Foo,
   },
   {
     path: '/bar',
-    component: Bar,
     name: 'bar',
+    // which is lazy-loaded when the route is visited.
+    component: () => import('../views/Bar.vue'),
   },
   {
-    path: '*',
+    path: '/:pathMatch(.*)*',
+    name: 'not-found',
     redirect: '/',
   },
 ];
-const router = new VueRouter({
+
+const router = createRouter({
+  history: createWebHashHistory(),
   routes,
   linkExactActiveClass: 'main_nav_active',
 });
