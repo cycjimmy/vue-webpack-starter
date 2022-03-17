@@ -20,43 +20,22 @@ module.exports = merge(webpackBase, {
       // Style
       {
         test: /\.css$/,
-        oneOf: [{
-          resourceQuery: /module/,
-          use: [
-            {
-              loader: 'vue-style-loader',
-            },
-            styleLoadersConfig.cssLoader,
-          ],
-        }, {
-          use: [
-            {
-              loader: 'vue-style-loader',
-            },
-            styleLoadersConfig.cssLoader,
-          ],
-        }],
+        use: [
+          {
+            loader: 'vue-style-loader',
+          },
+          styleLoadersConfig.cssLoader,
+        ],
       },
       {
         test: /\.scss$/,
-        oneOf: [{
-          resourceQuery: /module/,
-          use: [
-            {
-              loader: 'vue-style-loader',
-            },
-            styleLoadersConfig.cssLoader,
-            styleLoadersConfig.sassLoader,
-          ],
-        }, {
-          use: [
-            {
-              loader: 'vue-style-loader',
-            },
-            styleLoadersConfig.cssLoader,
-            styleLoadersConfig.sassLoader,
-          ],
-        }],
+        use: [
+          {
+            loader: 'vue-style-loader',
+          },
+          styleLoadersConfig.cssLoader,
+          styleLoadersConfig.sassLoader,
+        ],
       },
 
       // Pictures

@@ -3,8 +3,7 @@ const path = require('path');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-// vue
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 
 const DEVELOPMENT = process.env.NODE_ENV === 'development'; // Development mode
 const PRODUCTION = process.env.NODE_ENV === 'production'; // Production mode
@@ -32,7 +31,6 @@ module.exports = {
       path.resolve('static'),
     ],
     alias: {
-      vue$: path.resolve('node_modules', 'vue', 'dist', 'vue.esm.js'),
     },
     extensions: ['.js'],
   },
