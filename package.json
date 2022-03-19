@@ -1,6 +1,6 @@
 {
   "name": "vue-webpack-starter",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "vue webpack starter",
   "scripts": {
     "start": "npm run dev",
@@ -26,18 +26,18 @@
   },
   "homepage": "https://github.com/cycjimmy/vue-webpack-starter#readme",
   "dependencies": {
-    "@cycjimmy/awesome-js-funcs": "^3.1.0",
-    "@cycjimmy/mini-xhr": "^4.1.0",
-    "@cycjimmy/sass-lib": "^1.1.0",
+    "@cycjimmy/awesome-js-funcs": "^4.0.4",
+    "@cycjimmy/mini-xhr": "^5.0.0",
+    "@cycjimmy/sass-lib": "^2.0.0",
     "vue": "^3.2.31",
     "vue-router": "^4.0.14",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.7",
+    "@babel/core": "^7.17.8",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/preset-env": "^7.16.11",
-    "@cycjimmy/config-lib": "^2.0.0",
+    "@cycjimmy/config-lib": "^3.0.5",
     "autoprefixer": "^10.4.4",
     "babel-loader": "^8.2.3",
     "browser-sync": "^2.27.9",
