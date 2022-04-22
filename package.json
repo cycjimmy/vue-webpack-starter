@@ -1,6 +1,6 @@
 {
   "name": "vue-webpack-starter",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "vue webpack starter",
   "scripts": {
     "start": "npm run dev",
