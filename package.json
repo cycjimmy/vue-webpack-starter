@@ -1,6 +1,6 @@
 {
   "name": "vue-webpack-starter",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "vue webpack starter",
   "scripts": {
     "start": "npm run dev",
@@ -64,6 +64,7 @@
     "style-loader": "^3.3.1",
     "terser-webpack-plugin": "^5.3.1",
     "url-loader": "^4.1.1",
+    "vue-eslint-parser": "^8.3.0",
     "vue-loader": "^17.0.0",
     "vue-style-loader": "^4.1.3",
     "webpack": "^5.72.0",

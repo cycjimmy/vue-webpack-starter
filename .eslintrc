@@ -10,6 +10,7 @@
     "DEVELOPMENT": "readonly",
     "PRODUCTION": "readonly"
   },
+  "parser": "vue-eslint-parser",
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 12
