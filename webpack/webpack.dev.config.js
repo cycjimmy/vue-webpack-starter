@@ -33,7 +33,7 @@ module.exports = merge(webpackBase, {
           {
             loader: 'vue-style-loader',
           },
-          styleLoadersConfig.cssLoader,
+          styleLoadersConfig.cssLoaderWithModule,
           styleLoadersConfig.sassLoader,
         ],
       },
