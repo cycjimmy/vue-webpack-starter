@@ -27,7 +27,7 @@ module.exports = merge(webpackBase, {
         test: /\.scss$/,
         use: [
           styleLoadersConfig.miniCssExtractLoader,
-          styleLoadersConfig.cssLoader,
+          styleLoadersConfig.cssLoaderWithModule,
           styleLoadersConfig.postLoader,
           styleLoadersConfig.sassLoader,
         ],
@@ -36,9 +36,7 @@ module.exports = merge(webpackBase, {
         test: /\.css$/,
         use: [
           styleLoadersConfig.miniCssExtractLoader,
-          {
-            loader: 'css-loader',
-          },
+          styleLoadersConfig.cssLoader,
         ],
       },
 

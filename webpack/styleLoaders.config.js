@@ -16,6 +16,9 @@ module.exports = (options) => ({
   },
   cssLoader: {
     loader: 'css-loader',
+  },
+  cssLoaderWithModule: {
+    loader: 'css-loader',
     options: {
       importLoaders: 2,
       modules: {
