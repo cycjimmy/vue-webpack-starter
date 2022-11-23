@@ -1,15 +1,15 @@
 {
   "name": "vue-webpack-starter",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "vue webpack starter",
   "scripts": {
     "start": "npm run dev",
     "lint": "eslint -c .eslintrc .",
     "lint:fix": "eslint --fix -c .eslintrc .",
-    "dev": "npx webpack-cli --node-env development -c webpack/webpack.dev.config.js -w --color",
-    "build": "npx webpack-cli --node-env production -c webpack/webpack.build.config.js --progress --color",
-    "build:watch": "npx webpack-cli --node-env production -c webpack/webpack.build.config.js --progress --color -w",
-    "build:test_server:watch": "npx webpack-cli --node-env production_test_server -c webpack/webpack.build.config.js --progress --color -w"
+    "dev": "npx webpack-cli --define-process-env-node-env development -c webpack/webpack.dev.config.js -w --color",
+    "build": "npx webpack-cli --define-process-env-node-env production -c webpack/webpack.build.config.js --progress --color",
+    "build:watch": "npx webpack-cli --define-process-env-node-env production -c webpack/webpack.build.config.js --progress --color -w",
+    "build:test_server:watch": "npx webpack-cli --define-process-env-node-env production_test_server -c webpack/webpack.build.config.js --progress --color -w"
   },
   "repository": {
     "type": "git",
@@ -68,7 +68,7 @@
     "vue-loader": "^17.0.1",
     "vue-style-loader": "^4.1.3",
     "webpack": "^5.75.0",
-    "webpack-cli": "^4.10.0",
+    "webpack-cli": "^5.0.0",
     "webpack-merge": "^5.8.0"
   },
   "peerDependencies": {
