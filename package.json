@@ -6,10 +6,10 @@
     "start": "npm run dev",
     "lint": "eslint -c .eslintrc .",
     "lint:fix": "eslint --fix -c .eslintrc .",
-    "dev": "npx webpack-cli --node-env development -c webpack/webpack.dev.config.js -w --color",
-    "build": "npx webpack-cli --node-env production -c webpack/webpack.build.config.js --progress --color",
-    "build:watch": "npx webpack-cli --node-env production -c webpack/webpack.build.config.js --progress --color -w",
-    "build:test_server:watch": "npx webpack-cli --node-env production_test_server -c webpack/webpack.build.config.js --progress --color -w"
+    "dev": "npx webpack-cli --define-process-env-node-env development -c webpack/webpack.dev.config.js -w --color",
+    "build": "npx webpack-cli --define-process-env-node-env production -c webpack/webpack.build.config.js --progress --color",
+    "build:watch": "npx webpack-cli --define-process-env-node-env production -c webpack/webpack.build.config.js --progress --color -w",
+    "build:test_server:watch": "npx webpack-cli --define-process-env-node-env production_test_server -c webpack/webpack.build.config.js --progress --color -w"
   },
   "repository": {
     "type": "git",
