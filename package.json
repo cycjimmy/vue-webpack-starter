@@ -1,6 +1,6 @@
 {
   "name": "vue-webpack-starter",
-  "version": "2.0.4",
+  "version": "3.0.0",
   "description": "vue webpack starter",
   "scripts": {
     "start": "npm run dev",
@@ -25,6 +25,9 @@
     "url": "https://github.com/cycjimmy/vue-webpack-starter/issues"
   },
   "homepage": "https://github.com/cycjimmy/vue-webpack-starter#readme",
+  "engines": {
+    "node": "18"
+  },
   "dependencies": {
     "@cycjimmy/awesome-js-funcs": "^4.0.9",
     "@cycjimmy/mini-xhr": "^7.0.0",
