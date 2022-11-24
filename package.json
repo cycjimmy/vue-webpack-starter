@@ -25,6 +25,9 @@
     "url": "https://github.com/cycjimmy/vue-webpack-starter/issues"
   },
   "homepage": "https://github.com/cycjimmy/vue-webpack-starter#readme",
+  "engines": {
+    "node": "18"
+  },
   "dependencies": {
     "@cycjimmy/awesome-js-funcs": "^4.0.9",
     "@cycjimmy/mini-xhr": "^7.0.0",
