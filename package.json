@@ -41,7 +41,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/preset-env": "^7.20.2",
     "@cycjimmy/config-lib": "^3.2.1",
-    "autoprefixer": "^10.4.13",
+    "autoprefixer": "^10.4.14",
     "babel-loader": "^9.1.2",
     "browser-sync": "^2.28.3",
     "browser-sync-webpack-plugin": "^2.3.0",
