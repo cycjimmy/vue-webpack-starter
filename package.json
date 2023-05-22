@@ -43,7 +43,7 @@
     "@cycjimmy/config-lib": "^3.2.1",
     "autoprefixer": "^10.4.14",
     "babel-loader": "^9.1.2",
-    "browser-sync": "^2.29.1",
+    "browser-sync": "^2.29.3",
     "browser-sync-webpack-plugin": "^2.3.0",
     "clean-webpack-plugin": "^4.0.0",
     "cross-env": "^7.0.3",
