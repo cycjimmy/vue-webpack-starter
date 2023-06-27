@@ -33,7 +33,7 @@
     "@cycjimmy/mini-xhr": "^7.0.0",
     "@cycjimmy/sass-lib": "^2.2.0",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.1",
+    "vue-router": "^4.2.2",
     "vuex": "^4.1.0"
   },
   "devDependencies": {
@@ -47,7 +47,7 @@
     "browser-sync-webpack-plugin": "^2.3.0",
     "clean-webpack-plugin": "^4.0.0",
     "cross-env": "^7.0.3",
-    "css-loader": "^6.7.3",
+    "css-loader": "^6.8.1",
     "css-minimizer-webpack-plugin": "^5.0.0",
     "cssnano": "^6.0.1",
     "eslint": "^8.40.0",
@@ -61,7 +61,7 @@
     "mini-css-extract-plugin": "^2.7.6",
     "node-sass": "^9.0.0",
     "postcss": "^8.4.23",
-    "postcss-loader": "^7.3.0",
+    "postcss-loader": "^7.3.3",
     "postcss-preset-env": "^8.5.0",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
