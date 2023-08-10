@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-import Home from '../views/Home.vue';
-import Foo from '../views/Foo.vue';
+import Home from '@/views/Home.vue';
+import Foo from '@/views/Foo.vue';
 
 const routes = [
   {
@@ -27,7 +27,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHashHistory(`${window.location.pathname}#/`),
   routes,
   linkExactActiveClass: 'main_nav_active',
 });

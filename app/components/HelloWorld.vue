@@ -2,13 +2,14 @@
   <div :class="$style.hello">{{ msg }}</div>
 </template>
 
-<script>
-  export default {
-    name: 'HelloWorld',
-    props: {
-      msg: String
-    }
-  }
+<script setup>
+defineProps({
+  msg: {
+    type: String,
+    required: false,
+    default: '',
+  },
+});
 </script>
 
 <style lang="scss" src="./helloWorld.scss" module></style>

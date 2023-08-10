@@ -1,11 +1,9 @@
 <template>
   <div :class="$style.app">
-    <img
-      alt="Vue logo"
-      :src="logoSrc"
-      :class="$style.logo"
-    >
-    <HelloWorld v-bind:msg="msg"/>
+    <img alt="Vue logo"
+         :src="logoSrc"
+         :class="$style.logo">
+    <hello-world v-bind:msg="msg"/>
 
     <nav :class="$style.nav">
       <h2>Navigation menu</h2>
@@ -25,65 +23,52 @@
   </div>
 </template>
 
-<script>
-  import HelloWorld from './components/HelloWorld.vue';
-  import imgLogo from '../static/images/logo.png';
+<script setup>
+import imgLogo from '@static/images/logo.png';
+import HelloWorld from '@/components/HelloWorld.vue';
 
-  export default {
-    name: 'app',
-    data() {
-      return {
-        logoSrc: imgLogo,
-        msg: "Welcome to Vue.js App",
-      };
-    },
-    components: {
-      HelloWorld,
-    },
-    created() {
-      console.log(this.$style);
-    },
-  };
+const logoSrc = imgLogo;
+const msg = 'Welcome to Vue.js App';
 </script>
 
 <style lang="scss" module>
-  @import "./theme/variables";
+@import "@/theme/variables";
 
-  .app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+.app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
 
-    width: 100%;
-    text-align: center;
-    margin-top: 60px;
+  width: 100%;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.nav {
+  margin-top: 30px;
+
+  > h2 {
+    font-size: $fontL + 2px;
   }
+}
 
-  .logo {
-    width: 100px;
-    height: 100px;
-  }
+.mainNavList {
+  margin: 10px 0 30px;
 
-  .nav {
-    margin-top: 30px;
+  > li {
+    display: inline-block;
 
-    > h2 {
-      font-size: $fontL + 2px;
+    &:nth-child(n+2) {
+      margin-left: 10px;
     }
   }
+}
 
-  .mainNavList {
-    margin: 10px 0 30px;
-
-    > li {
-      display: inline-block;
-
-      &:nth-child(n+2) {
-        margin-left: 10px;
-      }
-    }
-  }
-
-  :global(.main_nav_active) {
-    font-weight: bold;
-    text-decoration: underline;
-  }
+:global(.main_nav_active) {
+  font-weight: bold;
+  text-decoration: underline;
+}
 </style>
