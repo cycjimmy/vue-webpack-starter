@@ -1,5 +1,5 @@
 /* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
-const path = require('path');
+const path = require('node:path');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -31,6 +31,8 @@ module.exports = {
       path.resolve('static'),
     ],
     alias: {
+      '@': path.resolve('app'),
+      '@static': path.resolve('static'),
     },
     extensions: ['.js'],
   },
