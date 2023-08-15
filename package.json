@@ -60,7 +60,7 @@
     "merge-stream": "^2.0.0",
     "mini-css-extract-plugin": "^2.7.6",
     "node-sass": "^9.0.0",
-    "postcss": "^8.4.27",
+    "postcss": "^8.4.28",
     "postcss-loader": "^7.3.3",
     "postcss-preset-env": "^9.1.1",
     "sass-loader": "^13.3.2",
