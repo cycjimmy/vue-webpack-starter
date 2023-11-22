@@ -1,5 +1,7 @@
 <template>
-  <div :class="$style.hello">{{ msg }}</div>
+  <div :class="$style.hello">
+    {{ msg }}
+  </div>
 </template>
 
 <script setup>

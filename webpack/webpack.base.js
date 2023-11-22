@@ -98,6 +98,8 @@ module.exports = {
 
     new ESLintPlugin({
       fix: true,
+      extensions: ['js', 'vue'],
+      exclude: 'node_modules',
     }),
 
     new CleanWebpackPlugin({
