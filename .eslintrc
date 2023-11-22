@@ -43,6 +43,15 @@
         ]
       }
     ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "": "never",
+        "js": "never",
+        "mjs": "never"
+      }
+    ],
     "vue/multi-word-component-names": 0
   }
 }
