@@ -1,25 +1,33 @@
 <template>
   <div :class="$style.app">
-    <img alt="Vue logo"
-         :src="logoSrc"
-         :class="$style.logo">
-    <hello-world v-bind:msg="msg"/>
+    <img
+      alt="Vue logo"
+      :src="logoSrc"
+      :class="$style.logo"
+    >
+    <hello-world :msg="msg" />
 
     <nav :class="$style.nav">
       <h2>Navigation menu</h2>
       <ul :class="$style.mainNavList">
         <li>
-          <router-link to="/">Home</router-link>
+          <router-link to="/">
+            Home
+          </router-link>
         </li>
         <li>
-          <router-link to="/foo">Foo</router-link>
+          <router-link to="/foo">
+            Foo
+          </router-link>
         </li>
         <li>
-          <router-link to="/bar">Bar</router-link>
+          <router-link to="/bar">
+            Bar
+          </router-link>
         </li>
       </ul>
     </nav>
-    <router-view></router-view>
+    <router-view />
   </div>
 </template>
 
@@ -32,6 +40,7 @@ const msg = 'Welcome to Vue.js App';
 </script>
 
 <style lang="scss" module>
+@import "@/theme/utilities";
 @import "@/theme/variables";
 
 .app {

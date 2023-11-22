@@ -1,6 +1,9 @@
 {
   "root": true,
-  "extends": "airbnb-base",
+  "extends": [
+    "plugin:vue/vue3-recommended",
+    "airbnb-base"
+  ],
   "env": {
     "browser": true,
     "node": true,
@@ -35,9 +38,11 @@
       2,
       {
         "ignore": [
-          "^@/"
+          "^@/",
+          "^@static"
         ]
       }
-    ]
+    ],
+    "vue/multi-word-component-names": 0
   }
 }

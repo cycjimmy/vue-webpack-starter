@@ -1,11 +1,11 @@
 {
   "name": "vue-webpack-starter",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "vue webpack starter",
   "scripts": {
     "start": "npm run dev",
-    "lint": "eslint -c .eslintrc .",
-    "lint:fix": "eslint --fix -c .eslintrc .",
+    "lint": "eslint --ext .js,.vue -c .eslintrc .",
+    "lint:fix": "eslint --fix --ext .js,.vue -c .eslintrc .",
     "dev": "npx webpack-cli --define-process-env-node-env development -c webpack/webpack.dev.config.js -w --color",
     "build": "npx webpack-cli --define-process-env-node-env production -c webpack/webpack.build.config.js --progress --color",
     "build:watch": "npx webpack-cli --define-process-env-node-env production -c webpack/webpack.build.config.js --progress --color -w",
@@ -53,6 +53,7 @@
     "eslint": "^8.53.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-vue": "^9.18.1",
     "eslint-webpack-plugin": "^4.0.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.3",
