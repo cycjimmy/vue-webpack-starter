@@ -32,7 +32,7 @@
     "@cycjimmy/awesome-js-funcs": "^4.0.9",
     "@cycjimmy/mini-xhr": "^7.0.0",
     "@cycjimmy/sass-lib": "^2.2.1",
-    "vue": "^3.3.11",
+    "vue": "^3.3.13",
     "vue-router": "^4.2.5",
     "vuex": "^4.1.0"
   },
@@ -56,7 +56,7 @@
     "eslint-plugin-vue": "^9.19.2",
     "eslint-webpack-plugin": "^4.0.1",
     "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.5.4",
+    "html-webpack-plugin": "^5.6.0",
     "image-webpack-loader": "^8.1.0",
     "merge-stream": "^2.0.0",
     "mini-css-extract-plugin": "^2.7.6",
