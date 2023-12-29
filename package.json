@@ -32,7 +32,7 @@
     "@cycjimmy/awesome-js-funcs": "^4.0.9",
     "@cycjimmy/mini-xhr": "^7.0.0",
     "@cycjimmy/sass-lib": "^2.2.1",
-    "vue": "^3.3.13",
+    "vue": "^3.4.0",
     "vue-router": "^4.2.5",
     "vuex": "^4.1.0"
   },
