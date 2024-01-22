@@ -5,7 +5,7 @@
       :src="logoSrc"
       :class="$style.logo"
     >
-    <hello-world :msg="msg" />
+    <hello-world :msg />
 
     <nav :class="$style.nav">
       <h2>Navigation menu</h2>
