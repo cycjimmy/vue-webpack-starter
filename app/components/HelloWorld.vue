@@ -14,4 +14,4 @@ defineProps({
 });
 </script>
 
-<style lang="scss" src="./helloWorld.scss" module></style>
+<style lang="scss" src="./helloWorld.scss" module />
