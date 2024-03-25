@@ -61,7 +61,7 @@
     "merge-stream": "^2.0.0",
     "mini-css-extract-plugin": "^2.8.1",
     "node-sass": "^9.0.0",
-    "postcss": "^8.4.35",
+    "postcss": "^8.4.38",
     "postcss-loader": "^8.1.1",
     "postcss-preset-env": "^9.4.0",
     "sass-loader": "^14.1.1",
@@ -76,6 +76,6 @@
     "webpack-merge": "^5.10.0"
   },
   "peerDependencies": {
-    "postcss": "^8.4.35"
+    "postcss": "^8.4.38"
   }
 }
