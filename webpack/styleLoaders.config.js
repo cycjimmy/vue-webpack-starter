@@ -40,6 +40,7 @@ module.exports = (options) => ({
     options: {
       sassOptions: {
         outputStyle: 'expanded',
+        quietDeps: true,
       },
     },
   },
