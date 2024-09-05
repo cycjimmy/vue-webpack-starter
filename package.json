@@ -32,7 +32,7 @@
     "@cycjimmy/awesome-js-funcs": "^4.0.9",
     "@cycjimmy/mini-xhr": "^7.0.1",
     "@cycjimmy/sass-lib": "^2.3.0",
-    "vue": "^3.5.0",
+    "vue": "^3.5.1",
     "vue-router": "^4.4.3",
     "vuex": "^4.1.0"
   },
@@ -49,7 +49,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "^7.1.2",
     "css-minimizer-webpack-plugin": "^7.0.0",
-    "cssnano": "^7.0.5",
+    "cssnano": "^7.0.6",
     "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.30.0",
