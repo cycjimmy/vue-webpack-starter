@@ -37,11 +37,11 @@
     "vuex": "^4.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.9",
+    "@babel/core": "^7.26.10",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/preset-env": "^7.26.9",
     "@cycjimmy/config-lib": "^3.2.2",
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.4.21",
     "babel-loader": "^10.0.0",
     "browser-sync": "^2.29.3",
     "browser-sync-webpack-plugin": "^2.3.0",
