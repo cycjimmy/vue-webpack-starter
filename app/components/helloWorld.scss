@@ -1,8 +1,8 @@
 // styleInHtml
-@import "@/theme/variables";
-@import "@/theme/utilities";
+@use "@/theme/variables";
+@use "@/theme/utilities";
 
 .hello {
   margin: 10px;
-  font-size: $fontS;
+  font-size: variables.$font-s;
 }
