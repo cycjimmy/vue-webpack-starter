@@ -1,22 +1,22 @@
 // styleInHtml
-@import 'variables';
-@import 'utilities';
+@use 'variables';
+@use 'utilities';
 
 /*---------------------------
  * reset style
  *---------------------------*/
-@import "~@cycjimmy/sass-lib/reset/special";
+@use "~@cycjimmy/sass-lib/reset/special";
 
 html {
-  font-size: $fontM;
+  font-size: variables.$font-m;
   line-height: 1.4;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
-  background-color: $bgc;
-  color: $fontColor;
-  font-size: $fontM;
+  background-color: variables.$bgc;
+  color: variables.$font-color;
+  font-size: variables.$font-m;
   font-family: -apple-system-font, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

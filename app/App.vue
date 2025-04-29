@@ -40,8 +40,8 @@ const msg = 'Welcome to Vue.js App';
 </script>
 
 <style lang="scss" module>
-@import "@/theme/utilities";
-@import "@/theme/variables";
+@use "@/theme/utilities";
+@use "@/theme/variables";
 
 .app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -60,7 +60,7 @@ const msg = 'Welcome to Vue.js App';
   margin-top: 30px;
 
   > h2 {
-    font-size: $fontL + 2px;
+    font-size: variables.$font-l + 2px;
   }
 }
 
