@@ -32,7 +32,7 @@
     "@cycjimmy/awesome-js-funcs": "^4.0.9",
     "@cycjimmy/mini-xhr": "^7.0.1",
     "@cycjimmy/sass-lib": "^3.0.1",
-    "vue": "^3.5.13",
+    "vue": "^3.5.20",
     "vue-router": "^4.5.1",
     "vuex": "^4.1.0"
   },
@@ -63,7 +63,7 @@
     "postcss": "^8.5.3",
     "postcss-loader": "^8.1.1",
     "postcss-preset-env": "^10.1.6",
-    "sass": "^1.87.0",
+    "sass": "^1.91.0",
     "sass-loader": "^16.0.5",
     "style-loader": "^4.0.0",
     "terser-webpack-plugin": "^5.3.14",
